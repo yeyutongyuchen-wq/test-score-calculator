@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
-export const dynamic = "force-static";
-
+/**
+ * Only include routes that already have a page file.
+ * SAT will be added in step 2 when /sat-score-calculator exists.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE_URL,
-      lastModified: "2026-09-22",
+      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
